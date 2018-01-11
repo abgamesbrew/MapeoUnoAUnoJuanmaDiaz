@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="es.albarregas.beans.Servicio" table="servicio1a1">
+        <id name="id" type="long">
+            <column name="idServicio"/>
+            
+            <!-- la clase hija tendrá la key auto-increment -->
+            <generator class="identity"/>
+        </id>
+        <property name="nombre">
+                <column length="30" name="nombre" not-null="true" />
+        </property> 
+        
+        <property name="path">
+                <column length="30" name="path" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

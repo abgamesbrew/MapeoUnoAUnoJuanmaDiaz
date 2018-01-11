@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="es.albarregas.beans.Puerto" table="puerto1a1">
+        <id name="id" type="long">
+            <column name="idPuerto"/>
+            <generator class="foreign">
+                
+                <!-- atributo que tiene dentro como objeto esta clase -->
+                <param name="property">servicio</param>
+                
+            </generator>
+        </id>
+        <property name="numero" type="integer">
+                <column length="3" name="numero" not-null="true" />
+        </property> 
+        
+        <property name="tipo">
+                <column length="30" name="tipo" not-null="true" />
+        </property>
+        
+        <!-- esto ira en la clase padre que contiene otra clase hija y en el name ira el nombre del objeto de la clase hija -->
+        <one-to-one cascade="all" class="es.albarregas.beans.Servicio" name="servicio" />
+    </class>
+</hibernate-mapping>

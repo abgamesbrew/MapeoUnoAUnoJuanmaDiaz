@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context  antiJARLocking="true" docBase="MapeoUnoAUnoJuanmaDiaz" path="/MapeoUnoAUnoJuanmaDiaz">
+    <!-- añadido el usuario root que tiene todo lo necesario para realizar cualquier operacion en nuestra bdd -->
+    <Resource 
+        name="jdbc/MUAU" 
+        auth="Container" 
+        type="javax.sql.DataSource" 
+        username="root" 
+        password="albarregas" 
+        driverClassName="com.mysql.jdbc.Driver" 
+        url="jdbc:mysql://localhost:3306/cursohibernate" 
+        maxActive="20" 
+        maxIdle="10"/>
+</Context>
